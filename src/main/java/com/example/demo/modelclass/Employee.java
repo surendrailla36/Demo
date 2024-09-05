@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 
 @Entity 
@@ -22,6 +23,7 @@ public class Employee {
 		private String name;
         @Column(name="ESalary")
 		private double salary;
+        @Email(message = "Email should be valid")
         @Column(name="EemailID")
 		private String emailId;
 		public int getEid() {
