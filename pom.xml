@@ -22,6 +22,15 @@
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
 
+<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+   
+    <scope>provided</scope>
+</dependency>
+
+
 
 
 		<dependency>
@@ -39,8 +48,19 @@
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-web-services</artifactId>
-    <version>3.2.4</version>
+   
 </dependency>
+
+<dependency>
+
+    <groupId>org.springdoc</groupId>
+
+    <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+
+    <version>2.1.0</version>
+
+</dependency>
+
 
 <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
 <dependency>
@@ -49,6 +69,10 @@
    
 </dependency>
 
+<dependency> 
+<groupId>org.springframework.boot</groupId> 
+<artifactId>spring-boot-starter-actuator</artifactId> 
+</dependency>
 	</dependencies>
 
 	<build>

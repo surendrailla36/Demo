@@ -8,7 +8,16 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity 
 @Table(name="employe")
 public class Employee {
@@ -16,46 +25,20 @@ public class Employee {
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
         @Column(name="EID")
 		private int eid;
-	    @Column(name="ID")
+		@Column(name="ID")
 	    private int id;
 	    @NotNull(message = "Employee name cannot be null")
+	    @Size(min = 2, max = 30, message = "Name must be between 2 and 30 characters")
         @Column(name="EName")
-		private String name;
+		private String ename;
         @Column(name="ESalary")
-		private double salary;
+		private double esalary;
         @Email(message = "Email should be valid")
         @Column(name="EemailID")
-		private String emailId;
-		public int getEid() {
-			return eid;
-		}
-		public void setEid(int eid) {
-			this.eid = eid;
-		}
-		public int getId() {
-			return id;
-		}
-		public void setId(int id) {
-			this.id = id;
-		}
-		public String getName() {
-			return name;
-		}
-		public void setName(String name) {
-			this.name = name;
-		}
-		public double getSalary() {
-			return salary;
-		}
-		public void setSalary(double salary) {
-			this.salary = salary;
-		}
-		public String getEmailId() {
-			return emailId;
-		}
-		public void setEmailId(String emailId) {
-			this.emailId = emailId;
-		}
-		
-		
+		private String eemailId;
+        @Column(name="eage")
+        private int eage; 
+        @Column(name="ESex")
+        private String esex;
+	
 }
