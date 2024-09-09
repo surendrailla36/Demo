@@ -6,7 +6,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name="product")
@@ -18,10 +21,12 @@ public class Product {
 	    @Column(name="PID")
 	    private int pid;
 	    @NotNull(message = "Product name cannot be null")
+	    @Size(min = 2, max = 30, message = "Name must be between 2 and 30 characters")
 	    @Column(name="PName")
 	    private String pname;
 	    @Column(name="PPrice")
 	    private float pprice;
+	    @Max(value = 10, message = "quantity should not exceed more then 10") 
 	    @Column(name="PQuantity")
 	    private int pquantity;
 		public int getEid() {
